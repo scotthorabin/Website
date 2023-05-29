@@ -1,0 +1,419 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+
+
+
+/* Main container */
+.container{
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-left: 128px;
+    padding-right: 128px;
+
+    @media (max-width: 1024px) {
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+
+    @media (max-width: 767px){
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    @media (max-width: 667px){ 
+        padding-left: 25px;
+        padding-right: 25px;
+}
+}
+/* This bit of code is for the hamburger menu (used for mobile navigation mostly)*/
+.hamburger{
+    display: block;
+    width: 35px;
+    cursor: pointer;
+
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.hamburger .bar, .hamburger::after, .hamburger::before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 6px;
+    background-color: black;
+    margin: 6px 0px;
+    transition: 0.4s;
+}
+/* This will rotate one of the three lines by -45 degrees*/
+.hamburger.is-active:before{
+    transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.hamburger.is-active .bar {
+    opacity: 0;
+}
+/* This will rotate one of the three lines by 45 degrees AFTER user has clicked off it*/
+.hamburger.is-active:after{
+    transform: rotate(45deg) translate(-8px,-9px);
+}
+
+/* The "mobile nav" represents the nav bar when the hamburger is pressed by the user */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    min-height: 100vh;
+    display: block;
+    z-index: 98;
+    background-color: #C3F9CB;
+    margin-top: 70px;
+    transition: 0.4s;
+    /* will display in the center of the mobile nav */
+    a{
+        display: block;
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto 16px;
+        text-align: center;
+        margin-bottom: 25px;
+        padding: 12px;
+        background-color: #00AE1A;
+
+        color: black;
+        text-decoration: none;
+    }
+    /* when hovered over by the user, the color will change to gray, */
+    /* Done this to alert the user that they are able to click on that button*/
+a:hover{
+    background-color: gray;
+}
+}
+
+.mobile-nav.is-active{
+    left: 0;
+}
+
+
+
+
+section{
+    h2{
+        text-align: center;
+        margin-bottom: 32px;
+        text-transform: uppercase;
+
+        color: #313131;
+        font-size: 36px;
+    }
+}
+
+
+/* Button */
+.button {
+    display: inline-block;
+    color: white;
+    background-color: green;
+    padding: 12px 16px;
+    border-radius: 7px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* Header */
+header{
+    //color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    .container {
+        padding-top: 32px;
+        padding-bottom: 32px;
+        display: flex;
+        justify-content: space-between;
+
+        max-width: 1600px;
+        margin: 0 auto;
+        padding-left: 128px;
+        padding-right: 128px;
+        align-items: center;
+
+        /* This will change features when the width is 1024 */
+        @media (max-width: 1024px){
+            max-width: 768px;
+            padding-top: 50px;
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 50px;
+            padding-left: 30px;
+            padding-right: 30px;
+            margin: 0 auto;
+        }
+
+        h2{
+            color: inherit;
+            text-transform: uppercase;
+            font-size: 32px;
+            font-weight: 900;
+
+            span {
+                font-weight: 600;
+            }
+        }
+
+        nav {
+            display: grid;
+            grid-gap: 16px;
+            grid-template-columns: repeat(6, auto);
+
+            /* This will change features when the width is 767 */
+            @media (max-width: 767px){
+                display: none;
+            }
+
+
+            a{
+                color: inherit;
+                font-size: 20px;
+                text-decoration: none;
+            }
+        }
+    }
+
+    &.is-scrolling {
+        background-color: #C3F9CB;
+        .container{
+            padding-bottom: 16px;
+            padding-top: 16px;
+        }
+    }
+}
+/* End of Header */
+
+
+
+/* Main Section where banner is */
+main {
+    section.banner{
+        color: black;
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+
+
+        background-image: url('../img/Welcome\ To\ Flint.jpg');
+        background-size: cover;
+
+
+        &:after{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            background-color: lightgray;
+            opacity: 0.6;
+        }
+        .container{
+            position: relative;
+            z-index: 1;
+            left: -50px;
+            top: 30px;
+
+
+            @media (max-width: 1024px){
+                left: 30px;
+            }
+
+            h1{
+                font-size: 72px;
+                margin-bottom: 32px;
+                
+            
+            
+
+            span {
+                color: green;
+            }
+
+            @media (max-width: 767px){
+                font-size: 30px;
+                padding-left: 10px;
+            }
+            
+        }
+            h3{
+                font-size: 38px;
+                font-weight: 230;
+                margin-bottom: 32px;
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+                @media (max-width: 767px){
+                    font-size: 20px;
+                    padding-left: 10px;
+                }
+            }
+            
+        }
+    }
+}
+
+.container {
+    .sub-title{
+        margin: 50px 0 20px;
+        font-size: 2.2vw;
+        font-weight: 500px;
+        color: #333;
+    }
+
+    .exclusives{
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+        grid-gap: 30px;
+    }
+
+    .exclusives div img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .exclusives div {
+        position: relative;
+}
+    p {
+        text-align: center;
+        font-weight: 100;
+        font-size: 20px;
+        font-family: 'Titillium Web', sans-serif;
+    }
+}
+
+/* ----- trending places ----- */
+.title{
+    h2 {
+        margin-top: 50px;
+        margin-bottom: 20px;
+        font-size: 40px;
+        font-weight: 600px;
+    }
+
+    .trending{
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 30px;
+    margin-bottom: 30px;
+    }
+
+    .trending div img{
+        width: 100%;
+        border-radius: 10px;
+    }
+    
+    h3{
+        font-weight: 600;
+        margin-top: 10px;
+    }
+}
+
+/* Call to action (Used to navigate user to tripadvisor website)*/
+
+.cta {
+    margin: 80px 0;
+    background-image: url('../img/Moel\ Famau.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    padding: 5%;
+    color: #fff;
+
+    h3 {
+        font-size: 2vw;
+        line-height: 5.3vw;
+        font-weight: 500;
+    }
+
+    p {
+        text-align: left;
+        font-size: 18px;
+        margin: 10px 0;
+        color: rgb(238, 18, 183);
+    }
+
+    .cta-btn {
+        background: rgb(39, 116, 39);
+        color: #fff;
+        text-decoration: none;
+        padding: 12px 30px;
+        border-radius: 8px;
+        margin-top: 25px;
+        display: inline-block;
+    }
+
+}
+#footer {
+    background-color: lightgray;
+    padding-bottom: 20px;
+    text-decoration: none;
+    @media (max-width: 1024px){
+        max-width: 768px;
+        padding-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 50px;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin: 0 auto;
+    }
+    @media (max-width: 667px){ 
+        max-width: 375px;
+        padding-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 50px;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin: 0 auto;
+        
+    }
+    nav {
+        text-align: center;
+        display: grid;
+        grid-gap: 16px;
+        grid-template-columns: repeat(6, auto);
+
+        a{
+            color: inherit;
+            font-size: 16px;
+            text-decoration: none;
+        }
+        
+
+        p {
+            font-size: 20px;
+            text-align: right;
+            text-decoration: none;
+        }
+    }
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Contact The Team!</title>
+
+
+    <link rel="stylesheet" href="./css/Contact.css"/>
+
+
+</head>
+<body>
+    <header class="is-scrolling">
+        <div class="container">
+            <h2><span>Flint</span>shire</h2>
+            <nav>
+                    <!-- Nav bar that will allow the user to click on one to explore the site -->
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="Where-To-Stay.html">Where to Stay</a>
+                    <a href="Where-To-Go.html">Where to Go</a>
+                    <a href="Contact.html">Contact</a>
+            </nav>
+    <main>
+        <section class="contact-form">
+            <div class="container">
+                <!--HEADING-->
+                <h1>Contact the team!</h1>
+                <!--Another HEADING with INSTRUCTIONS-->
+                <p>Fill out this form to get in contact with the team!</p>
+
+                <form>
+                    <!--FORM FOR FIRST NAME-->
+                    <div class="form-group">
+                        <label for="firstname">First name*</label>
+                        <input type="text" 
+                        name="firstname" 
+                        id="firstname"
+                        required 
+                        class="form-element"
+                        placeholder="Jane"/>
+                    </div>
+                    <!--FORM FOR LAST NAME-->
+                    <div class="form-group">
+                        <label for="lastname">Last name*</label>
+                        <input type="text" 
+                        name="lastname" 
+                        id="lastname"
+                        required 
+                        class="form-element"
+                        placeholder="Mcdonald"/>
+                    </div>
+                    <!--FORM FOR EMAIL-->
+                    <div class="form-group">
+                        <label for="email">Email Address*</label>
+                        <input type="email" 
+                        name="email" 
+                        id="email"
+                        required 
+                        class="form-element"
+                        placeholder="JaneMcdonald@example.com"/>
+                    </div>
+                    <!--FORM FOR PHONE NUMBER-->
+                    <div class="form-group">
+                        <label for="phonenumber">Phone Number</label>
+                        <input type="number" 
+                        name="phonenumber" 
+                        id="phonenumber"
+                        required 
+                        class="form-element"
+                        placeholder="07532345675"/>
+                    </div>
+                    <!--FORM FOR INFORMATION-->
+                    <div class="form group full">
+                        <label for="message">What are you looking for?</label>
+                        <textarea name="message" id="message" class="form-element" placeholder="I want to find a link..."></textarea>
+                    </div>
+                    <!--SUBMIT BUTTON-->
+                    <div class="submit group">
+                        <input type="submit" value="SEND EMAIL">
+                    </div>
+                </form>
+            </div>
+
+
+        </section>
+
+    </main>
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,390 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+/* Main container */
+.container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-left: 128px;
+  padding-right: 128px;
+}
+@media (max-width: 1024px) {
+  .container {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+/* This bit of code is for the hamburger menu (used for mobile navigation mostly)*/
+.hamburger {
+  display: block;
+  width: 35px;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.hamburger .bar, .hamburger::after, .hamburger::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 6px;
+  background-color: black;
+  margin: 6px 0px;
+  transition: 0.4s;
+}
+
+/* This will rotate one of the three lines by -45 degrees*/
+.hamburger.is-active:before {
+  transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.hamburger.is-active .bar {
+  opacity: 0;
+}
+
+/* This will rotate one of the three lines by 45 degrees AFTER user has clicked off it*/
+.hamburger.is-active:after {
+  transform: rotate(45deg) translate(-8px, -9px);
+}
+
+/* The "mobile nav" represents the nav bar when the hamburger is pressed by the user */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  min-height: 100vh;
+  display: block;
+  z-index: 98;
+  background-color: #C3F9CB;
+  margin-top: 70px;
+  transition: 0.4s;
+  /* will display in the center of the mobile nav */
+  /* when hovered over by the user, the color will change to gray, */
+  /* Done this to alert the user that they are able to click on that button*/
+}
+.mobile-nav a {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto 16px;
+  text-align: center;
+  margin-bottom: 25px;
+  padding: 12px;
+  background-color: #00AE1A;
+  color: black;
+  text-decoration: none;
+}
+.mobile-nav a:hover {
+  background-color: gray;
+}
+
+.mobile-nav.is-active {
+  left: 0;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 32px;
+  text-transform: uppercase;
+  color: #313131;
+  font-size: 36px;
+}
+
+/* Button */
+.button {
+  display: inline-block;
+  color: white;
+  background-color: green;
+  padding: 12px 16px;
+  border-radius: 7px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+}
+header .container {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-left: 128px;
+  padding-right: 128px;
+  align-items: center;
+  /* This will change features when the width is 1024 */
+}
+@media (max-width: 1024px) {
+  header .container {
+    max-width: 768px;
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 0 auto;
+  }
+}
+header .container h2 {
+  color: inherit;
+  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: 900;
+}
+header .container h2 span {
+  font-weight: 600;
+}
+header .container nav {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(6, auto);
+  /* This will change features when the width is 767 */
+}
+@media (max-width: 767px) {
+  header .container nav {
+    display: none;
+  }
+}
+header .container nav a {
+  color: inherit;
+  font-size: 20px;
+  text-decoration: none;
+}
+header.is-scrolling {
+  background-color: #C3F9CB;
+}
+header.is-scrolling .container {
+  padding-bottom: 16px;
+  padding-top: 16px;
+}
+
+/* End of Header */
+/* Main Section where banner is */
+main section.banner {
+  color: black;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/family-walking.jpg");
+  background-size: cover;
+}
+main section.banner:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  background-color: lightgray;
+  opacity: 0.6;
+}
+main section.banner .container {
+  position: relative;
+  z-index: 1;
+  left: -50px;
+  top: 30px;
+}
+@media (max-width: 1024px) {
+  main section.banner .container {
+    left: 30px;
+  }
+}
+main section.banner .container h1 {
+  font-size: 72px;
+  margin-bottom: 32px;
+}
+main section.banner .container h1 span {
+  color: green;
+}
+@media (max-width: 767px) {
+  main section.banner .container h1 {
+    font-size: 30px;
+    padding-left: 10px;
+  }
+}
+main section.banner .container h3 {
+  font-size: 38px;
+  font-weight: 230;
+  margin-bottom: 32px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+@media (max-width: 767px) {
+  main section.banner .container h3 {
+    font-size: 20px;
+    padding-left: 10px;
+  }
+}
+
+/* This is the about section underneath the heading*/
+.about {
+  background-color: #eee;
+}
+.about .container {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+.about .container .about-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 16px;
+}
+@media (max-width: 1024px) {
+  .about .container .about-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .about .container .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.about .container .website-contains {
+  background-color: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+}
+.about .container .website-contains .img-box {
+  display: block;
+  width: 100%;
+  border-bottom: 5px solid lightgreen;
+}
+.about .container .website-contains .img-box .img {
+  display: block;
+  width: 100%;
+  height: 128px;
+  /* makes image act like a div with a background image (makes them all align and not stretch out) */
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.about .container .website-contains .content {
+  padding: 16px;
+}
+
+.projects {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+.projects .moreinfo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 16px;
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .projects .moreinfo-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.projects .moreinfo-grid .info {
+  background-image: url("../img/Ewloe_Castle,_Flintshire.jpg");
+  border-radius: 16px;
+  overflow: hidden;
+}
+.projects .moreinfo-grid .info:nth-child(2) {
+  background-image: url("../img/Buckley.jpg");
+}
+.projects .moreinfo-grid .info:nth-child(3) {
+  background-image: url("../img/View_across_fields.jpg");
+}
+.projects .moreinfo-grid .info:nth-child(4) {
+  background-image: url("../img/Mold.jpg");
+}
+.projects .moreinfo-grid .info:nth-child(5) {
+  background-image: url("../img/St_Mary_Flint.jpg");
+}
+.projects .moreinfo-grid .info:nth-child(6) {
+  background-image: url("../img/House_on_Moor_Lane.jpg");
+}
+.projects .moreinfo-grid .info .content {
+  opacity: 0;
+  color: #fff;
+  padding: 18px;
+  background-color: rgba(83, 83, 83, 0.8);
+  transition: 0.4s;
+}
+.projects .moreinfo-grid .info .content h3 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+@media (max-width: 1024px) {
+  .projects .moreinfo-grid .info .content h3 {
+    font-size: 25px;
+  }
+}
+.projects .moreinfo-grid .info .content p {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+@media (max-width: 1024px) {
+  .projects .moreinfo-grid .info .content p {
+    font-size: 16px;
+  }
+}
+.projects .moreinfo-grid .info:hover .content {
+  opacity: 1;
+}
+.projects .center {
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .hide-mob {
+    display: none;
+  }
+}
+/* Footer for bottom of the page */
+#footer {
+  background-color: lightgray;
+  padding-bottom: 20px;
+  text-decoration: none;
+}
+#footer nav {
+  text-align: center;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(6, auto);
+}
+#footer nav a {
+  color: inherit;
+  font-size: 16px;
+  text-decoration: none;
+}
+#footer nav p {
+  font-size: 20px;
+  text-align: right;
+  text-decoration: none;
+}/*# sourceMappingURL=style.css.map */
