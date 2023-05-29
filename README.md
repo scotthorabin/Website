@@ -15,7 +15,7 @@ In order to look at this project, you can extract the ZIP File onto software suc
 
 The website has many options and buttons to click on to navigate you through the pages smoothly. The design is basic but also professional, I did this so that the user is not confused.
 
-In the Main Branch, there is also a review of the project and how I found it.
+In the Main Branch, there is also a documentation that explains my thought process of the design and the development of the project and how I found the module/assignment overall.
 
 Enjoy the Website!
 
